@@ -1,9 +1,10 @@
 Blogger::Application.routes.draw do
   
-  resources :articles
+  resources :articles do
+    resources :comments
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+root to: 'articles#index'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
@@ -55,4 +56,6 @@ Blogger::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+end
+
 end
